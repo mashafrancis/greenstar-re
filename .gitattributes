@@ -5,3 +5,6 @@
 # GitHub Linguist Override
 .yarn/* linguist-vendored
 .pnp.js linguist-vendored
+
+*.ico   -text
+*.png   -text
