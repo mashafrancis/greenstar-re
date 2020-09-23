@@ -1,11 +1,11 @@
 import React, { StrictMode } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import * as serviceWorker from './serviceWorker';
 // components
 import App from './App';
 // styles
 import './index.css';
+import * as serviceWorker from './serviceWorker';
 
 const rootNode = document.getElementById('root');
 
