@@ -3,9 +3,9 @@
 ## greenstar cleaners
 
 ![CI](https://github.com/almond-hydroponics/almond-re/workflows/CI/badge.svg)
-[![CircleCI](https://circleci.com/gh/almond-hydroponics/almond-re.svg?style=svg)](https://circleci.com/gh/almond-hydroponics/almond-re)
-[![Maintainability](https://api.codeclimate.com/v1/badges/1787ab6745c18d366de9/maintainability)](https://codeclimate.com/github/almond-hydroponics/almond-re/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/1787ab6745c18d366de9/test_coverage)](https://codeclimate.com/github/almond-hydroponics/almond-re/test_coverage)
+[![CircleCI](https://circleci.com/gh/mashafrancis/greenstar-re.svg?style=svg)](https://circleci.com/gh/mashafrancis/greenstar-re)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f2d166a5b3d7995cdfaf/maintainability)](https://codeclimate.com/github/mashafrancis/greenstar-re/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/f2d166a5b3d7995cdfaf/test_coverage)](https://codeclimate.com/github/mashafrancis/greenstar-re/test_coverage)
 
 </div>
 
@@ -13,9 +13,9 @@
 
     Almond frontend application for the hydroponics farm
 
-[![Almond](../public/images/readme.svg)](https://almond-re-staging.herokuapp.com/)
+[![Almond](../public/readme.svg)](https://almond-re-staging.herokuapp.com/)
 
-#### Simple but complicated almond
+#### Simple but complicated greenstar
 
 </div>
 

@@ -123,12 +123,19 @@ dist
 .env.production.local
 
 # Yarn 2
+#.yarn/*
+#.yarn/cache/
+#.yarn/releases/
+##.yarn/plugins/
+#.yarn/versions/
+#.yarn/sdks/
+
 .yarn/*
-.yarn/cache/
-.yarn/releases/
-#.yarn/plugins/
-.yarn/versions/
-.yarn/sdks/
+!.yarn/cache/
+!.yarn/releases/
+!.yarn/plugins/
+!.yarn/sdks/
+!.yarn/versions/
 
 .idea/*
 .idea/dictionaries/masha.xml
@@ -154,3 +161,13 @@ dist/
 /env-config.js
 /.env.random
 /public/env-config.js
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*

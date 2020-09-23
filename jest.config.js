@@ -23,6 +23,7 @@ module.exports = {
 		'!src/**/*interfaces.d.ts',
 		'!src/**/fixtures.ts',
 		'!src/testHelpers.tsx',
+		'!src/serviceWorker.ts',
 	],
 	coverageThreshold: {
 		global: {
