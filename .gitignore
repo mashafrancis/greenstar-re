@@ -102,3 +102,55 @@ dist
 
 # TernJS port file
 .tern-port
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Yarn 2
+.yarn/*
+.yarn/cache/
+.yarn/releases/
+#.yarn/plugins/
+.yarn/versions/
+.yarn/sdks/
+
+.idea/*
+.idea/dictionaries/masha.xml
+
+yarn-error.log
+package-lock.json
+src/**/**/__snapshots__/*.test.tsx.snap
+/vscode
+/.vscode
+.vscode
+.idea/
+/reports
+/tmp
+cypress/screenshots
+cypress/videos
+reports/
+tmp/
+/dist
+dist/
+/.env
+/.firebase/
+/.env.production
+/env-config.js
+/.env.random
+/public/env-config.js
