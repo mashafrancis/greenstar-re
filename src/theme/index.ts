@@ -1,12 +1,12 @@
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core';
-
+import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
+import responsiveFontSizes from '@material-ui/core/styles/responsiveFontSizes';
 import palette from './palette';
 
 const theme = responsiveFontSizes(
 	createMuiTheme({
 		palette,
 		typography: {
-			fontFamily: 'Lato',
+			fontFamily: '"Google Sans", "Roboto", "Helvetica Neue", sans-serif',
 		},
 		zIndex: {
 			appBar: 1200,

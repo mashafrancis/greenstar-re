@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	chatIconButton: {
 		position: 'absolute',
-		right: theme.spacing(3),
+		right: theme.spacing(5),
 		left: 'auto',
 		top: theme.spacing(-3),
 		background: theme.palette.primary.main,

@@ -8,3 +8,5 @@
 
 *.ico   -text
 *.png   -text
+*.jpg   -text
+*.ttf   -text

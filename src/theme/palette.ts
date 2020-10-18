@@ -14,6 +14,9 @@ export default {
 	black,
 	white,
 	alternate: 'rgb(247, 249, 250)',
+	primary: {
+		main: green[700],
+	},
 	secondary: {
 		main: '#F9B934',
 	},

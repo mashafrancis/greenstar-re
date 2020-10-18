@@ -22,7 +22,6 @@ import {
 	reviews,
 	integrations,
 	customizations,
-	team,
 } from '../../data';
 
 const HomePage = (): JSX.Element => {
@@ -64,7 +63,6 @@ const HomePage = (): JSX.Element => {
 				<Section>
 					<Divider />
 				</Section>
-				{/* <Team data={team} /> */}
 			</Section>
 			<Divider />
 			<AppBar position="fixed" className={classes.appBarBottom}>

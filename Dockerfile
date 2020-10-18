@@ -1,5 +1,5 @@
 # Stage 1 - the build process
-FROM node:14-alpine AS build-deps
+FROM node:14.13.0-alpine AS build-deps
 
 LABEL maintainer="Francis Masha" MAINTAINER="Francis Masha <francismasha96@gmail.com>"
 LABEL application="greenstar-fe"
