@@ -1,7 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 import { useTheme } from '@material-ui/core/styles';
-import { useMediaQuery, Grid, colors } from '@material-ui/core';
+import { useMediaQuery, Grid } from '@material-ui/core';
+import { blue } from '@material-ui/core/colors';
 import { LearnMoreLink } from '@components/atoms';
 import { SectionHeader, IconAlternate } from '@components/molecules';
 import { CardBase, DescriptionListIcon } from '@components/organisms';
@@ -56,7 +57,7 @@ const Advantages = ({
 									<IconAlternate
 										fontIconClass={item.icon}
 										size="medium"
-										color={colors.blue}
+										color={blue}
 									/>
 								}
 							/>

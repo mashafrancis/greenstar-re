@@ -1,7 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 import { useTheme } from '@material-ui/core/styles';
-import { Grid, Button, colors, useMediaQuery } from '@material-ui/core';
+import { Grid, Button, useMediaQuery } from '@material-ui/core';
+import { blue } from '@material-ui/core/colors';
 import { Image } from '@components/atoms';
 import { SectionHeader, IconAlternate } from '@components/molecules';
 import { CardReview } from '@components/organisms';
@@ -57,7 +58,7 @@ const Reviews = ({ data, className, ...rest }: ReviewsProps): JSX.Element => {
 							text={review.feedback}
 							icon={
 								<IconAlternate
-									color={colors.blue}
+									color={blue}
 									fontIconClass="fas fa-quote-right"
 								/>
 							}

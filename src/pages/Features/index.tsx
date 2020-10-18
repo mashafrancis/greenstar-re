@@ -1,7 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 import { useTheme } from '@material-ui/core/styles';
-import { Grid, Button, colors, useMediaQuery } from '@material-ui/core';
+import { Grid, Button, useMediaQuery } from '@material-ui/core';
+import { blue } from '@material-ui/core/colors';
 import { LearnMoreLink } from '@components/atoms';
 import { SectionHeader, IconAlternate } from '@components/molecules';
 import { CardBase, DescriptionListIcon } from '@components/organisms';
@@ -62,7 +63,7 @@ const Features = ({ data, className, ...rest }: FeaturesProps): JSX.Element => {
 									<IconAlternate
 										fontIconClass={item.icon}
 										size="medium"
-										color={colors.blue}
+										color={blue}
 									/>
 								}
 								align="left"
