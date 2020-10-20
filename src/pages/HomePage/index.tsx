@@ -44,9 +44,6 @@ const HomePage = (): JSX.Element => {
 				<Section>
 					<Divider />
 				</Section>
-				<Section>
-					<Divider />
-				</Section>
 				<Advantages data={advantages} />
 				<Section>
 					<Divider />

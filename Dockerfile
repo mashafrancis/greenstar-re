@@ -1,8 +1,10 @@
 # Stage 1 - the build process
-FROM node:14.13.0-alpine AS build-deps
+FROM node:14.14.0-alpine AS build-deps
 
 LABEL maintainer="Francis Masha" MAINTAINER="Francis Masha <francismasha96@gmail.com>"
 LABEL application="greenstar-fe"
+
+WORKDIR /opt/web
 
 # update the alpine image and install curl
 RUN apk update && apk add curl
@@ -23,11 +25,11 @@ RUN rm -rf package-lock.json
 #COPY yarn.lock ./
 COPY package.json ./
 
-#RUN rm -rf .yarnrc.yml
-#RUN rm -rf yarn.lock
+RUN rm -rf .yarnrc.yml
+RUN rm -rf yarn.lock
 RUN yarn set version berry
-#RUN echo 'nodeLinker: node-modules' >> .yarnrc.yml
-#RUN touch yarn.lock
+RUN echo 'nodeLinker: node-modules' >> .yarnrc.yml
+RUN touch yarn.lock
 RUN yarn install
 
 ENV PATH="./node_modules/.bin:$PATH"
@@ -44,7 +46,7 @@ RUN curl -L https://github.com/a8m/envsubst/releases/download/v1.1.0/envsubst-`u
     mv envsubst /usr/local/bin
 COPY ./nginx.config /etc/nginx/nginx.template
 CMD ["/bin/sh", "-c", "envsubst < /etc/nginx/nginx.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
-COPY --from=build-deps /build /usr/share/nginx/html
+COPY --from=build-deps /opt/web/build /usr/share/nginx/html
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
