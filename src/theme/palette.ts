@@ -1,58 +1,72 @@
-import {
-	blue,
-	blueGrey,
-	green,
-	grey,
-	orange,
-	red,
-} from '@material-ui/core/colors';
+// eslint-disable-next-line
+import { PaletteType } from '@material-ui/core';
 
-const white = '#FFFFFF';
-const black = '#000000';
-
-export default {
-	black,
-	white,
-	alternate: 'rgb(247, 249, 250)',
+export const light = {
+	alternate: {
+		main: 'rgb(247, 249, 250)',
+		dark: '#e8eaf6',
+	},
+	cardShadow: 'rgba(23, 70, 161, .11)',
+	type: 'light' as PaletteType,
 	primary: {
-		main: green[700],
+		main: '#1967d2',
+		light: '#6494ff',
+		dark: '#003ea0',
+		contrastText: '#fff',
 	},
 	secondary: {
-		main: '#F9B934',
-	},
-	success: {
-		contrastText: white,
-		dark: green[900],
-		main: green[600],
-		light: green[400],
-	},
-	info: {
-		contrastText: white,
-		dark: blue[900],
-		main: blue[600],
-		light: blue[400],
-	},
-	warning: {
-		contrastText: white,
-		dark: orange[900],
-		main: orange[600],
-		light: orange[400],
-	},
-	error: {
-		contrastText: white,
-		dark: red[900],
-		main: red[600],
-		light: red[400],
+		light: '#ffb74d',
+		main: '#f9b934',
+		dark: '#f57c00',
+		contrastText: 'rgba(0, 0, 0, 0.87)',
 	},
 	text: {
-		primary: '#121037',
-		secondary: blueGrey[600],
-		link: blue[600],
+		primary: '#2d3748',
+		secondary: '#718096',
 	},
+	divider: 'rgba(0, 0, 0, 0.12)',
 	background: {
-		default: '#F4F6F8',
-		paper: white,
+		paper: '#fff',
+		default: '#fff',
+		level2: '#f5f5f5',
+		level1: '#fff',
+		footer: '#1b1642',
 	},
-	icon: blueGrey[600],
-	divider: grey[200],
+};
+
+export const dark = {
+	alternate: {
+		main: '#2D3748',
+		dark: '#24242b',
+	},
+	cardShadow: 'rgba(0, 0, 0, .11)',
+	common: {
+		black: '#000',
+		white: '#fff',
+	},
+	type: 'dark' as PaletteType,
+	primary: {
+		main: '#90caf9',
+		light: 'rgb(166, 212, 250)',
+		dark: 'rgb(100, 141, 174)',
+		contrastText: 'rgba(0, 0, 0, 0.87)',
+	},
+	secondary: {
+		light: '#ffb74d',
+		main: '#f9b934',
+		dark: '#f57c00',
+		contrastText: 'rgba(0, 0, 0, 0.87)',
+	},
+	text: {
+		primary: '#EEEEEF',
+		secondary: '#AEB0B4',
+	},
+	divider: 'rgba(255, 255, 255, 0.12)',
+	background: {
+		paper: '#1A202C',
+		default: '#121212',
+		level2: '#333',
+		level1: '#2D3748',
+		footer: '#18181f',
+	},
 };

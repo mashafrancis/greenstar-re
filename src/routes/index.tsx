@@ -1,20 +1,38 @@
 // react libraries
 import React from 'react';
 // third party packages
-import { Redirect, Switch } from 'react-router-dom';
-import HomePage from '@pages/HomePage';
-import NotFoundPage from '@pages/NotFoundPage';
-import { RouteWithLayout } from '../common';
+import { Route, Redirect, Switch } from 'react-router-dom';
+import {
+	Service as ServiceView,
+	NotFoundCover as NotFoundCoverView,
+} from '../pages';
+import WithLayout from '../WithLayout';
 import { Main as MainLayout, Minimal as MinimalLayout } from '../layouts';
 
 const Routes = (): any => (
 	<Switch>
 		<Redirect exact from="/" to="/home" />
-		<RouteWithLayout component={HomePage} layout={MainLayout} path="/home" />
-		<RouteWithLayout
-			component={NotFoundPage}
-			layout={MinimalLayout}
+		<Route
+			exact
+			path="/"
+			render={(matchProps) => (
+				<WithLayout
+					{...matchProps}
+					component={ServiceView}
+					layout={MainLayout}
+				/>
+			)}
+		/>
+		<Route
+			exact
 			path="/404"
+			render={(matchProps) => (
+				<WithLayout
+					{...matchProps}
+					component={NotFoundCoverView}
+					layout={MinimalLayout}
+				/>
+			)}
 		/>
 		<Redirect to="/404" />
 	</Switch>
