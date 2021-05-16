@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { Paper } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import getTheme from 'theme';
+
 import AOS from 'aos';
-import getTheme from './theme';
 
 export const useDarkMode = () => {
 	const [themeMode, setTheme] = useState('light');
@@ -60,8 +61,9 @@ export default function WithLayout({
 	}, []);
 
 	const [themeMode, themeToggler, mountedComponent] = useDarkMode();
-
-	if (!mountedComponent) return <div />;
+	useEffect(() => {
+		AOS.refresh();
+	}, [mountedComponent]);
 
 	return (
 		<ThemeProvider theme={getTheme(themeMode)}>

@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Drawer } from '@material-ui/core';
 
 import { SidebarNav } from './components';
-import { PagesProps } from '../../../interfaces';
 
 const useStyles = makeStyles((theme) => ({
 	drawer: {

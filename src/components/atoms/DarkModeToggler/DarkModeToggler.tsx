@@ -65,7 +65,11 @@ const DarkModeToggler = ({
 	const classes = useStyles();
 
 	return (
-		<span className={clsx(classes.root, className)} {...rest} onClick={onClick}>
+		<span
+			className={clsx(classes.root, className)}
+			{...rest}
+			onClick={onClick}
+		>
 			<div
 				className={clsx(
 					classes.border,

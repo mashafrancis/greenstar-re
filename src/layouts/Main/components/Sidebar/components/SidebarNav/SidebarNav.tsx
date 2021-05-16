@@ -12,9 +12,6 @@ import {
 	Button,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
-import { NavLink } from 'react-router-dom';
-import { PagesProps } from '../../../../../interfaces';
 
 const useStyles = makeStyles((theme) => ({
 	root: {},
@@ -29,11 +26,6 @@ const useStyles = makeStyles((theme) => ({
 	},
 	listItemIcon: {
 		minWidth: 'auto',
-	},
-	listItemText: {
-		flex: '0 0 auto',
-		// marginLeft: theme.spacing(0),
-		whiteSpace: 'nowrap',
 	},
 	closeIcon: {
 		justifyContent: 'flex-end',
@@ -61,7 +53,6 @@ const useStyles = makeStyles((theme) => ({
 
 interface Props {
 	className?: string;
-	// eslint-disable-next-line @typescript-eslint/ban-types
 	onClose: Function;
 	pages: PagesProps;
 }
@@ -74,38 +65,84 @@ const SidebarNav = ({
 }: Props): JSX.Element => {
 	const classes = useStyles();
 
+	const { landings } = pages;
+	const supportedPages = pages.pages;
+	const { account } = pages;
+
+	const MenuGroup = ({ item }: MenuGroupProps): JSX.Element => (
+		<List disablePadding>
+			<ListItem disableGutters>
+				<Typography
+					variant="body2"
+					color="primary"
+					className={classes.menuGroupTitle}
+				>
+					{item.groupTitle}
+				</Typography>
+			</ListItem>
+			{item.pages.map((page, i) => (
+				<ListItem disableGutters key={i} className={classes.menuGroupItem}>
+					<Typography
+						variant="body2"
+						component="a"
+						href={page.href}
+						className={clsx(classes.navLink, 'submenu-item')}
+						color="textPrimary"
+						onClick={() => onClose()}
+					>
+						{page.title}
+					</Typography>
+				</ListItem>
+			))}
+		</List>
+	);
+
 	const LandingPages = (): JSX.Element => {
+		const { services, apps, web } = landings.children;
 		return (
 			<div className={classes.menu}>
 				<div className={classes.menuItem}>
-					<NavLink to="/resources">
-						<ListItem
-							aria-describedby="resources"
-							className={clsx(classes.listItem)}
-						>
-							<Typography
-								variant="body1"
-								color="textPrimary"
-								className={clsx(classes.listItemText, 'menu-item')}
-							>
-								Resources
-							</Typography>
-						</ListItem>
-					</NavLink>
-					<NavLink to="/portfolio">
-						<ListItem
-							aria-describedby="resources"
-							className={clsx(classes.listItem)}
-						>
-							<Typography
-								variant="body1"
-								color="textPrimary"
-								className={clsx(classes.listItemText, 'menu-item')}
-							>
-								Portfolio
-							</Typography>
-						</ListItem>
-					</NavLink>
+					<MenuGroup item={services} />
+					<MenuGroup item={apps} />
+				</div>
+				<div className={classes.menuItem}>
+					<MenuGroup item={web} />
+				</div>
+			</div>
+		);
+	};
+
+	const SupportedPages = (): JSX.Element => {
+		const { career, helpCenter, company, contact, blog, portfolio } =
+			supportedPages.children;
+		return (
+			<div className={classes.menu}>
+				<div className={classes.menuItem}>
+					<MenuGroup item={career} />
+					<MenuGroup item={helpCenter} />
+					<MenuGroup item={company} />
+				</div>
+				<div className={classes.menuItem}>
+					<MenuGroup item={contact} />
+					<MenuGroup item={blog} />
+					<MenuGroup item={portfolio} />
+				</div>
+			</div>
+		);
+	};
+
+	const AccountPages = (): JSX.Element => {
+		const { settings, signup, signin, password, error } = account.children;
+		return (
+			<div className={classes.menu}>
+				<div className={classes.menuItem}>
+					<MenuGroup item={settings} />
+					<MenuGroup item={signup} />
+				</div>
+				<div className={classes.menuItem}>
+					<MenuGroup item={signin} />
+					<MenuGroup item={password} />
+					<MenuGroup item={error} />
 				</div>
 			</div>
 		);
@@ -129,23 +166,40 @@ const SidebarNav = ({
 			</ListItem>
 			<ListItem className={classes.listItem}>
 				<Typography variant="h6" color="textPrimary" gutterBottom>
-					Account
+					Pages
 				</Typography>
+				<SupportedPages />
 			</ListItem>
 			<ListItem className={classes.listItem}>
 				<Divider className={classes.divider} />
 			</ListItem>
 			<ListItem className={classes.listItem}>
-				<NavLink to="/store">
-					<Button
-						variant="contained"
-						color="primary"
-						fullWidth
-						endIcon={<LocalGroceryStoreIcon />}
-					>
-						Go to store
-					</Button>
-				</NavLink>
+				<Typography variant="h6" color="textPrimary" gutterBottom>
+					Account
+				</Typography>
+				<AccountPages />
+			</ListItem>
+			<ListItem className={classes.listItem}>
+				<Button
+					variant="outlined"
+					fullWidth
+					component="a"
+					href="/documentation"
+				>
+					Documentation
+				</Button>
+			</ListItem>
+			<ListItem className={classes.listItem}>
+				<Button
+					variant="contained"
+					color="primary"
+					fullWidth
+					component="a"
+					target="blank"
+					href="https://material-ui.com/store/items/the-front-landing-page/"
+				>
+					Buy Now
+				</Button>
 			</ListItem>
 		</List>
 	);

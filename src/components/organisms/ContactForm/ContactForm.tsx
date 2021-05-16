@@ -41,7 +41,6 @@ const ContactForm = (): JSX.Element => {
 	React.useEffect(() => {
 		const errors = validate(formState.values, schema);
 
-		// eslint-disable-next-line no-shadow
 		setFormState((formState) => ({
 			...formState,
 			isValid: !errors,
@@ -52,7 +51,6 @@ const ContactForm = (): JSX.Element => {
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		event.persist();
 
-		// eslint-disable-next-line no-shadow
 		setFormState((formState) => ({
 			...formState,
 			values: {

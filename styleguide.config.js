@@ -14,8 +14,7 @@ module.exports = {
 			links: [
 				{
 					rel: 'stylesheet',
-					href:
-						'https://fonts.googleapis.com/css?family=Google+Sans:400,400i,500,500i,700,700i|Google+Sans+Display:400,400i,500,500i,700,700i&amp;subset=all',
+					href: 'https://fonts.googleapis.com/css?family=Google+Sans:400,400i,500,500i,700,700i|Google+Sans+Display:400,400i,500,500i,700,700i&amp;subset=all',
 				},
 			],
 		},

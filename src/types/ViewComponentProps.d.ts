@@ -1,7 +1,7 @@
 interface ViewComponentProps {
 	className?: string;
 	data?: any;
-	themeMode?: PropTypes.string;
+	themeMode?: string;
 	// All other props
 	[x: string]: any;
 }

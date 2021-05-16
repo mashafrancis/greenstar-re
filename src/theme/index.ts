@@ -9,7 +9,10 @@ const getTheme = (mode) =>
 				contentWidth: 1236,
 			},
 			typography: {
-				fontFamily: 'Lato',
+				fontFamily: 'Google Sans, Roboto, Helvetica Neue, sans-serif',
+				button: {
+					textTransform: 'none',
+				},
 			},
 			zIndex: {
 				appBar: 1200,

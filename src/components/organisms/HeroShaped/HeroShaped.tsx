@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { Divider } from '@material-ui/core';
-import { Section } from '@components/organisms';
+import { Section } from 'components/organisms';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -85,7 +85,9 @@ const HeroShaped = ({
 				>
 					{leftSide}
 				</Section>
-				<div className={clsx('hero-shaped__right-side', classes.heroRightSide)}>
+				<div
+					className={clsx('hero-shaped__right-side', classes.heroRightSide)}
+				>
 					<div className={clsx('hero-shaped__cover', classes.heroCover)}>
 						<div
 							className={clsx(

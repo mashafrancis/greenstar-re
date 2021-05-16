@@ -1,5 +1,11 @@
 const plugins = [
 	[
+		[
+			'@babel/plugin-transform-react-jsx',
+			{
+				runtime: 'automatic',
+			},
+		],
 		'babel-plugin-import',
 		{
 			libraryName: '@material-ui/core',

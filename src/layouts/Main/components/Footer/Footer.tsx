@@ -11,11 +11,9 @@ import {
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import PinterestIcon from '@material-ui/icons/Pinterest';
 
-import { Image } from '@components/atoms';
-import logo from '../../../../assets/images/logo.png';
-
-import { MenuGroupProps, PagesProps } from '../../../interfaces';
+import { Image } from 'components/atoms';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -38,20 +36,12 @@ const useStyles = makeStyles((theme) => ({
 		paddingTop: 0,
 	},
 	logoContainer: {
-		width: '10%',
-		height: '10%',
-		[theme.breakpoints.up('md')]: {
-			width: '35%',
-			height: '35%',
-		},
+		width: 120,
+		height: 32,
 	},
 	logoImage: {
 		width: '100%',
 		height: '100%',
-		[theme.breakpoints.up('md')]: {
-			width: '60%',
-			height: '60%',
-		},
 	},
 	groupTitle: {
 		textTransform: 'uppercase',
@@ -70,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	icon: {
-		fontSize: 34,
+		fontSize: 24,
 	},
 	menuListContainer: {
 		padding: '0 !important',
@@ -111,7 +101,9 @@ interface Props {
 const Footer = ({ pages, className, ...rest }: Props): JSX.Element => {
 	const classes = useStyles();
 
-	const { discover, learn, support } = pages;
+	const { landings } = pages;
+	const supportedPages = pages.pages;
+	const { account } = pages;
 
 	const MenuGroup = ({ item }: MenuGroupProps): JSX.Element => (
 		<List disablePadding className={classes.menuItem}>
@@ -135,34 +127,54 @@ const Footer = ({ pages, className, ...rest }: Props): JSX.Element => {
 		</List>
 	);
 
-	const DiscoverPages = (): JSX.Element => {
-		const { about } = discover.children;
-		return (
-			<div className={classes.menu}>
-				<div>
-					<MenuGroup item={about} />
-				</div>
-			</div>
-		);
-	};
-
-	const LearnPages = (): JSX.Element => {
-		const { resources } = learn.children;
-		return (
-			<div className={classes.menu}>
-				<div>
-					<MenuGroup item={resources} />
-				</div>
-			</div>
-		);
-	};
-
-	const SupportPages = (): JSX.Element => {
-		const { services } = support.children;
+	const LandingPages = (): JSX.Element => {
+		const { services, apps, web } = landings.children;
 		return (
 			<div className={classes.menu}>
 				<div>
 					<MenuGroup item={services} />
+					<MenuGroup item={apps} />
+				</div>
+				<div>
+					<MenuGroup item={web} />
+				</div>
+			</div>
+		);
+	};
+
+	const SupportedPages = (): JSX.Element => {
+		const { career, helpCenter, company, contact, blog, portfolio } =
+			supportedPages.children;
+		return (
+			<div className={classes.menu}>
+				<div>
+					<MenuGroup item={career} />
+					<MenuGroup item={helpCenter} />
+				</div>
+				<div>
+					<MenuGroup item={company} />
+					<MenuGroup item={contact} />
+				</div>
+				<div>
+					<MenuGroup item={blog} />
+					<MenuGroup item={portfolio} />
+				</div>
+			</div>
+		);
+	};
+
+	const AccountPages = (): JSX.Element => {
+		const { settings, signup, signin, password, error } = account.children;
+		return (
+			<div className={classes.menu}>
+				<div>
+					<MenuGroup item={settings} />
+					<MenuGroup item={signup} />
+				</div>
+				<div>
+					<MenuGroup item={signin} />
+					<MenuGroup item={password} />
+					<MenuGroup item={error} />
 				</div>
 			</div>
 		);
@@ -176,11 +188,11 @@ const Footer = ({ pages, className, ...rest }: Props): JSX.Element => {
 						<List disablePadding>
 							<ListItem disableGutters className={classes.logoContainerItem}>
 								<div className={classes.logoContainer}>
-									<a href="/" title="almond">
+									<a href="/" title="thefront">
 										<Image
 											className={classes.logoImage}
-											src={logo}
-											alt="almond"
+											src="https://assets.maccarianagency.com/the-front/logos/logo-negative.svg"
+											alt="thefront"
 											lazy={false}
 										/>
 									</a>
@@ -196,19 +208,22 @@ const Footer = ({ pages, className, ...rest }: Props): JSX.Element => {
 								<IconButton className={classes.socialIcon}>
 									<TwitterIcon className={classes.icon} />
 								</IconButton>
+								<IconButton className={classes.socialIcon}>
+									<PinterestIcon className={classes.icon} />
+								</IconButton>
 							</ListItem>
 						</List>
 					</Grid>
 					<Grid item xs={12} md={10} className={classes.menuListContainer}>
 						<Grid container spacing={0}>
 							<Grid item>
-								<DiscoverPages />
+								<LandingPages />
 							</Grid>
 							<Grid item>
-								<LearnPages />
+								<SupportedPages />
 							</Grid>
 							<Grid item>
-								<SupportPages />
+								<AccountPages />
 							</Grid>
 						</Grid>
 					</Grid>
