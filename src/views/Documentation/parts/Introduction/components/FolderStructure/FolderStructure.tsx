@@ -1,4 +1,3 @@
-import React from 'react';
 import { makeStyles, colors, List, Typography, Box } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
 import { IconText } from 'components/atoms';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Grid, colors } from '@material-ui/core';
 import { IconAlternate } from 'components/molecules';
 import { DescriptionListIcon } from 'components/organisms';

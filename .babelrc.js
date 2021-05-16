@@ -1,11 +1,15 @@
+const presets = [
+	"@babel/preset-typescript"
+]
+
 const plugins = [
 	[
-		[
-			'@babel/plugin-transform-react-jsx',
-			{
-				runtime: 'automatic',
-			},
-		],
+		'@babel/plugin-transform-react-jsx',
+		{
+			runtime: 'automatic',
+		},
+	],
+	[
 		'babel-plugin-import',
 		{
 			libraryName: '@material-ui/core',
@@ -39,4 +43,4 @@ const plugins = [
 	],
 ];
 
-module.exports = { plugins };
+module.exports = { presets, plugins };

@@ -1,4 +1,3 @@
-import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useMediaQuery, Grid, Button, Avatar } from '@material-ui/core';
 import { LearnMoreLink } from 'components/atoms';

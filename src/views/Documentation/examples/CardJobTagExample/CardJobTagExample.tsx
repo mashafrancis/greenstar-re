@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Grid, colors } from '@material-ui/core';
 import { CardJobTag } from 'components/organisms';
 import {

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Swiper from 'swiper';
@@ -62,7 +62,7 @@ const SwiperImage = ({
 }: SwiperImageProps): JSX.Element => {
 	const classes = useStyles();
 
-	React.useEffect(() => {
+	useEffect(() => {
 		new Swiper('.swiper-container', {
 			slidesPerView: 1,
 			spaceBetween: 0,

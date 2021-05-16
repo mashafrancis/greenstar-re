@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Typography } from '@material-ui/core';
 import { Section } from 'components/organisms';
 import {

@@ -3,7 +3,6 @@
  *
  * You may delete this file and its occurrences from the project filesystem if you are using react-scripts
  */
-import React from 'react';
 import NoSsr from '@material-ui/core/NoSsr';
 import Account from 'views/Account';
 import Main from 'layouts/Main';

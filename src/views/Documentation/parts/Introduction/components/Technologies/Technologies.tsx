@@ -1,4 +1,3 @@
-import React from 'react';
 import { makeStyles, List, Chip } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Section, SectionAlternate } from 'components/organisms';
 import { Faq, Contact, Hero } from './components';
 

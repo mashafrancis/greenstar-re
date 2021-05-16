@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -28,7 +28,7 @@ const Map = ({
 }: MapProps): JSX.Element | null => {
 	const classes = useStyles();
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const L = require('leaflet');
 		delete L.Icon.Default.prototype._getIconUrl;
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Typography, Grid } from '@material-ui/core';
 import { Image } from 'components/atoms';

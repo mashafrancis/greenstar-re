@@ -1,4 +1,3 @@
-import React from 'react';
 import { SwiperNumber } from 'components/molecules';
 
 const PromoNumbers = ({

@@ -1,4 +1,3 @@
-import React from 'react';
 import { CardBase, ContactForm } from 'components/organisms';
 
 const Contact = ({ className, ...rest }: ViewComponentProps): JSX.Element => (

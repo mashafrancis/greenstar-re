@@ -1,4 +1,3 @@
-import React from 'react';
 import { makeStyles, Divider } from '@material-ui/core';
 
 import {

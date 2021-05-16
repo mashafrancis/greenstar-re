@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box } from '@material-ui/core';
 import { DarkModeToggler } from 'components/atoms';
 import {

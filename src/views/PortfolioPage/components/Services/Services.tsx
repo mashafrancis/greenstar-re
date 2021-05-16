@@ -1,4 +1,3 @@
-import React from 'react';
 import { Grid, Button, colors } from '@material-ui/core';
 import { SectionHeader, IconAlternate } from 'components/molecules';
 import { DescriptionListIcon } from 'components/organisms';

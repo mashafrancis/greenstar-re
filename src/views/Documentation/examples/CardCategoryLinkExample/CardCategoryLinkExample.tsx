@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, colors, Grid } from '@material-ui/core';
 import { CardCategoryLink } from 'components/organisms';
 import {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Typography } from '@material-ui/core';
 import { Parallax, CardBase } from 'components/organisms';
 import { SectionHeader } from 'components/molecules';

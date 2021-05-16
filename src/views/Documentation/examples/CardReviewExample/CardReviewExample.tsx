@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, colors } from '@material-ui/core';
 import { CardReview } from 'components/organisms';
 import { IconAlternate } from 'components/molecules';

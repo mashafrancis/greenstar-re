@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Typography, Button } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';

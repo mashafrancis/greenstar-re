@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Grid, Typography, Button, colors } from '@material-ui/core';
 import { HeroBackground } from 'components/organisms';
 import {

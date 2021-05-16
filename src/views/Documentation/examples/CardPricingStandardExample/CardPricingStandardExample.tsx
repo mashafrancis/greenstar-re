@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, colors, Grid, Button, Typography } from '@material-ui/core';
 import { CardPricingStandard } from 'components/organisms';
 import { Icon } from 'components/atoms';

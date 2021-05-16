@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Button } from '@material-ui/core';
 import { HeroShaped } from 'components/organisms';
 import { Image } from 'components/atoms';

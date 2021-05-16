@@ -1,4 +1,3 @@
-import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Typography, Grid, useMediaQuery, colors } from '@material-ui/core';
 import { SectionHeader, IconAlternate } from 'components/molecules';

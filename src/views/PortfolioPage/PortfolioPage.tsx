@@ -1,4 +1,3 @@
-import React from 'react';
 import { Divider } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
 import { Features, Folio, Gallery, Hero, Services } from './components';
