@@ -64,9 +64,7 @@ const SidebarNav = ({
 }: Props): JSX.Element => {
 	const classes = useStyles();
 
-	const { landings } = pages;
-	const supportedPages = pages.pages;
-	const { account } = pages;
+	const { discover, learn, support } = pages;
 
 	const MenuGroup = ({ item }: MenuGroupProps): JSX.Element => (
 		<List disablePadding>
@@ -96,52 +94,34 @@ const SidebarNav = ({
 		</List>
 	);
 
-	const LandingPages = (): JSX.Element => {
-		const { services, apps, web } = landings.children;
+	const DiscoverPages = (): JSX.Element => {
+		const { about } = discover.children;
 		return (
 			<div className={classes.menu}>
-				<div className={classes.menuItem}>
+				<div>
+					<MenuGroup item={about} />
+				</div>
+			</div>
+		);
+	};
+
+	const LearnPages = (): JSX.Element => {
+		const { resources } = learn.children;
+		return (
+			<div className={classes.menu}>
+				<div>
+					<MenuGroup item={resources} />
+				</div>
+			</div>
+		);
+	};
+
+	const SupportPages = (): JSX.Element => {
+		const { services } = support.children;
+		return (
+			<div className={classes.menu}>
+				<div>
 					<MenuGroup item={services} />
-					<MenuGroup item={apps} />
-				</div>
-				<div className={classes.menuItem}>
-					<MenuGroup item={web} />
-				</div>
-			</div>
-		);
-	};
-
-	const SupportedPages = (): JSX.Element => {
-		const { career, helpCenter, company, contact, blog, portfolio } =
-			supportedPages.children;
-		return (
-			<div className={classes.menu}>
-				<div className={classes.menuItem}>
-					<MenuGroup item={career} />
-					<MenuGroup item={helpCenter} />
-					<MenuGroup item={company} />
-				</div>
-				<div className={classes.menuItem}>
-					<MenuGroup item={contact} />
-					<MenuGroup item={blog} />
-					<MenuGroup item={portfolio} />
-				</div>
-			</div>
-		);
-	};
-
-	const AccountPages = (): JSX.Element => {
-		const { settings, signup, signin, password, error } = account.children;
-		return (
-			<div className={classes.menu}>
-				<div className={classes.menuItem}>
-					<MenuGroup item={settings} />
-					<MenuGroup item={signup} />
-				</div>
-				<div className={classes.menuItem}>
-					<MenuGroup item={signin} />
-					<MenuGroup item={password} />
-					<MenuGroup item={error} />
 				</div>
 			</div>
 		);
@@ -158,7 +138,7 @@ const SidebarNav = ({
 				<Typography variant="h6" color="textPrimary" gutterBottom>
 					Landings
 				</Typography>
-				<LandingPages />
+				<DiscoverPages />
 			</ListItem>
 			<ListItem className={classes.listItem}>
 				<Divider className={classes.divider} />
@@ -167,7 +147,7 @@ const SidebarNav = ({
 				<Typography variant="h6" color="textPrimary" gutterBottom>
 					Pages
 				</Typography>
-				<SupportedPages />
+				<LearnPages />
 			</ListItem>
 			<ListItem className={classes.listItem}>
 				<Divider className={classes.divider} />
@@ -176,7 +156,7 @@ const SidebarNav = ({
 				<Typography variant="h6" color="textPrimary" gutterBottom>
 					Account
 				</Typography>
-				<AccountPages />
+				<SupportPages />
 			</ListItem>
 			<ListItem className={classes.listItem}>
 				<Button

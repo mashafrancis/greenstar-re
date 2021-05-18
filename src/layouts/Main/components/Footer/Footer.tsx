@@ -100,9 +100,7 @@ interface Props {
 const Footer = ({ pages, className, ...rest }: Props): JSX.Element => {
 	const classes = useStyles();
 
-	const { landings } = pages;
-	const supportedPages = pages.pages;
-	const { account } = pages;
+	const { discover, learn, support } = pages;
 
 	const MenuGroup = ({ item }: MenuGroupProps): JSX.Element => (
 		<List disablePadding className={classes.menuItem}>
@@ -126,54 +124,34 @@ const Footer = ({ pages, className, ...rest }: Props): JSX.Element => {
 		</List>
 	);
 
-	const LandingPages = (): JSX.Element => {
-		const { services, apps, web } = landings.children;
+	const DiscoverPages = (): JSX.Element => {
+		const { about } = discover.children;
+		return (
+			<div className={classes.menu}>
+				<div>
+					<MenuGroup item={about} />
+				</div>
+			</div>
+		);
+	};
+
+	const LearnPages = (): JSX.Element => {
+		const { resources } = learn.children;
+		return (
+			<div className={classes.menu}>
+				<div>
+					<MenuGroup item={resources} />
+				</div>
+			</div>
+		);
+	};
+
+	const SupportPages = (): JSX.Element => {
+		const { services } = support.children;
 		return (
 			<div className={classes.menu}>
 				<div>
 					<MenuGroup item={services} />
-					<MenuGroup item={apps} />
-				</div>
-				<div>
-					<MenuGroup item={web} />
-				</div>
-			</div>
-		);
-	};
-
-	const SupportedPages = (): JSX.Element => {
-		const { career, helpCenter, company, contact, blog, portfolio } =
-			supportedPages.children;
-		return (
-			<div className={classes.menu}>
-				<div>
-					<MenuGroup item={career} />
-					<MenuGroup item={helpCenter} />
-				</div>
-				<div>
-					<MenuGroup item={company} />
-					<MenuGroup item={contact} />
-				</div>
-				<div>
-					<MenuGroup item={blog} />
-					<MenuGroup item={portfolio} />
-				</div>
-			</div>
-		);
-	};
-
-	const AccountPages = (): JSX.Element => {
-		const { settings, signup, signin, password, error } = account.children;
-		return (
-			<div className={classes.menu}>
-				<div>
-					<MenuGroup item={settings} />
-					<MenuGroup item={signup} />
-				</div>
-				<div>
-					<MenuGroup item={signin} />
-					<MenuGroup item={password} />
-					<MenuGroup item={error} />
 				</div>
 			</div>
 		);
@@ -216,13 +194,13 @@ const Footer = ({ pages, className, ...rest }: Props): JSX.Element => {
 					<Grid item xs={12} md={10} className={classes.menuListContainer}>
 						<Grid container spacing={0}>
 							<Grid item>
-								<LandingPages />
+								<DiscoverPages />
 							</Grid>
 							<Grid item>
-								<SupportedPages />
+								<LearnPages />
 							</Grid>
 							<Grid item>
-								<AccountPages />
+								<SupportPages />
 							</Grid>
 						</Grid>
 					</Grid>

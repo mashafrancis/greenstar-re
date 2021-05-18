@@ -1,7 +1,9 @@
 import clsx from 'clsx';
-import { makeStyles, colors } from '@material-ui/core';
+import { indigo } from '@material-ui/core/colors';
+import { makeStyles } from '@material-ui/styles';
+import { Theme } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
 	root: {
 		position: 'relative',
 	},
@@ -18,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	borderDark: {
-		borderColor: colors.indigo[700],
+		borderColor: indigo[700],
 	},
 	modeToggler: {
 		position: 'absolute',
@@ -37,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	modeTogglerDark: {
 		transform: `translateX(${theme.spacing(3)}px)`,
-		backgroundColor: colors.indigo[900],
+		backgroundColor: indigo[900],
 	},
 	modeTogglerIcon: {
 		fill: theme.palette.secondary.main,

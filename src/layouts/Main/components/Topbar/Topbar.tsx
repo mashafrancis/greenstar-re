@@ -2,6 +2,8 @@ import { useState } from 'react';
 import * as React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
+// import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
 import {
 	Toolbar,
 	Hidden,
@@ -148,106 +150,6 @@ const Topbar = ({
 		setOpenedPopoverId(null);
 	};
 
-	const { landings } = pages;
-	const supportedPages = pages.pages;
-	const { account } = pages;
-
-	const MenuGroup = ({ item }: MenuGroupProps): JSX.Element => (
-		<List disablePadding>
-			<ListItem disableGutters>
-				<Typography
-					variant="body2"
-					color="primary"
-					className={classes.menuGroupTitle}
-				>
-					{item.groupTitle}
-				</Typography>
-			</ListItem>
-			{item.pages.map((page, i) => (
-				<ListItem disableGutters key={i} className={classes.menuGroupItem}>
-					<Typography
-						variant="body1"
-						component="a"
-						href={page.href}
-						className={clsx(classes.navLink, 'submenu-item')}
-						color="textSecondary"
-						onClick={handleClose}
-					>
-						{page.title}
-					</Typography>
-				</ListItem>
-			))}
-		</List>
-	);
-
-	const LandingPages = (): JSX.Element => {
-		const { services, apps, web } = landings.children;
-		return (
-			<div className={classes.menu}>
-				<div className={classes.menuItem}>
-					<MenuGroup item={services} />
-					<MenuGroup item={apps} />
-				</div>
-				<div className={classes.menuItem}>
-					<MenuGroup item={web} />
-				</div>
-			</div>
-		);
-	};
-
-	const SupportedPages = (): JSX.Element => {
-		const { career, helpCenter, company, contact, blog, portfolio } =
-			supportedPages.children;
-		return (
-			<div className={classes.menu}>
-				<div className={classes.menuItem}>
-					<MenuGroup item={career} />
-					<MenuGroup item={helpCenter} />
-				</div>
-				<div className={classes.menuItem}>
-					<MenuGroup item={company} />
-					<MenuGroup item={contact} />
-				</div>
-				<div className={classes.menuItem}>
-					<MenuGroup item={blog} />
-					<MenuGroup item={portfolio} />
-				</div>
-			</div>
-		);
-	};
-
-	const AccountPages = (): JSX.Element => {
-		const { settings, signup, signin, password, error } = account.children;
-		return (
-			<div className={classes.menu}>
-				<div className={classes.menuItem}>
-					<MenuGroup item={settings} />
-				</div>
-				<div className={classes.menuItem}>
-					<MenuGroup item={signup} />
-					<MenuGroup item={signin} />
-				</div>
-				<div className={classes.menuItem}>
-					<MenuGroup item={password} />
-					<MenuGroup item={error} />
-				</div>
-			</div>
-		);
-	};
-
-	const renderPages = (id: string): JSX.Element | null => {
-		if (id === 'landing-pages') {
-			return <LandingPages />;
-		}
-		if (id === 'supported-pages') {
-			return <SupportedPages />;
-		}
-		if (id === 'account') {
-			return <AccountPages />;
-		}
-		return null;
-	};
-
 	return (
 		<Toolbar disableGutters className={classes.toolbar} {...rest}>
 			<div className={classes.logoContainer}>
@@ -259,7 +161,7 @@ const Topbar = ({
 								? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
 								: 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
 						}
-						alt="thefront"
+						alt="greenstar"
 						lazy={false}
 					/>
 				</a>
@@ -267,81 +169,35 @@ const Topbar = ({
 			<div className={classes.flexGrow} />
 			<Hidden smDown>
 				<List disablePadding className={classes.navigationContainer}>
-					{[landings, supportedPages, account].map((page, i) => (
-						<div key={page.id}>
-							<ListItem
-								aria-describedby={page.id}
-								onClick={(e) => handleClick(e, page.id)}
-								className={clsx(
-									classes.listItem,
-									openedPopoverId === page.id ? classes.listItemActive : '',
-								)}
-							>
-								<Typography
-									variant="body1"
-									color="textPrimary"
-									className={clsx(classes.listItemText, 'menu-item')}
-								>
-									{page.title}
-								</Typography>
-								<ListItemIcon className={classes.listItemIcon}>
-									<ExpandMoreIcon
-										className={
-											openedPopoverId === page.id ? classes.expandOpen : ''
-										}
-										fontSize="small"
-									/>
-								</ListItemIcon>
-							</ListItem>
-							<Popover
-								elevation={1}
-								id={page.id}
-								open={openedPopoverId === page.id}
-								anchorEl={anchorEl}
-								onClose={handleClose}
-								anchorOrigin={{
-									vertical: 'bottom',
-									horizontal: 'center',
-								}}
-								transformOrigin={{
-									vertical: 'top',
-									horizontal: 'center',
-								}}
-								classes={{ paper: classes.popover }}
-							>
-								<div>{renderPages(page.id)}</div>
-							</Popover>
-						</div>
-					))}
-					<ListItem
-						className={clsx(classes.listItem, 'menu-item--no-dropdown')}
-					>
-						<DarkModeToggler
-							themeMode={themeMode}
-							onClick={() => themeToggler()}
-						/>
-					</ListItem>
-					<ListItem
-						className={clsx(classes.listItem, 'menu-item--no-dropdown')}
-					>
-						<Button variant="outlined" component="a" href="/documentation">
-							Documentation
-						</Button>
-					</ListItem>
-					<ListItem
-						className={clsx(classes.listItem, 'menu-item--no-dropdown')}
-					>
-						<Button
-							variant="contained"
-							color="primary"
-							component="a"
-							target="blank"
-							href="https://material-ui.com/store/items/the-front-landing-page/"
-							className={classes.listItemButton}
+					<Link href="/home/" as="/home/">
+						<ListItem
+							aria-describedby="resources"
+							className={clsx(classes.listItem)}
 						>
-							Buy Now
-						</Button>
-					</ListItem>
+							<Typography
+								variant="body1"
+								color="textPrimary"
+								className={clsx(classes.listItemText, 'menu-item')}
+							>
+								Resources
+							</Typography>
+						</ListItem>
+					</Link>
+
+					<Link href="/home/" as="/home/">
+						<ListItem
+							aria-describedby="shop"
+							className={clsx(classes.listItem)}
+						>
+							<Typography
+								variant="body1"
+								color="textPrimary"
+								className={clsx(classes.listItemText, 'menu-item')}
+							>
+								Shop
+							</Typography>
+						</ListItem>
+					</Link>
 				</List>
 			</Hidden>
 			<Hidden mdUp>

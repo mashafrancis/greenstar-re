@@ -8,36 +8,25 @@ interface MenuGroupProps {
 }
 
 interface PagesProps {
-	landings: {
+	discover: {
+		title: string;
+		id: string;
+		children: {
+			about: MenuItemProps;
+		};
+	};
+	learn: {
+		title: string;
+		id: string;
+		children: {
+			resources: MenuItemProps;
+		};
+	};
+	support: {
 		title: string;
 		id: string;
 		children: {
 			services: MenuItemProps;
-			apps: MenuItemProps;
-			web: MenuItemProps;
-		};
-	};
-	pages: {
-		title: string;
-		id: string;
-		children: {
-			career: MenuItemProps;
-			helpCenter: MenuItemProps;
-			company: MenuItemProps;
-			contact: MenuItemProps;
-			blog: MenuItemProps;
-			portfolio: MenuItemProps;
-		};
-	};
-	account: {
-		title: string;
-		id: string;
-		children: {
-			settings: MenuItemProps;
-			signup: MenuItemProps;
-			signin: MenuItemProps;
-			password: MenuItemProps;
-			error: MenuItemProps;
 		};
 	};
 }

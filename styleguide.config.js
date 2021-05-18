@@ -22,7 +22,7 @@ module.exports = {
 	sections: [
 		{
 			name: 'Introduction',
-			content: './README.md',
+			content: './.github/readme.md',
 			sectionDepth: 1,
 			exampleMode: 'hide',
 			usageMode: 'hide',

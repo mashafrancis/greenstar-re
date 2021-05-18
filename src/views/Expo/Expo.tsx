@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { colors, Divider } from '@material-ui/core';
+import { Divider } from '@material-ui/core';
+import { blue } from '@material-ui/core/colors';
 import { Section, SectionAlternate } from 'components/organisms';
 import {
 	About,
@@ -26,7 +27,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
 	sectionDescription: {
-		background: colors.blue[900],
+		background: blue[900],
 	},
 	sectionAlternateForm: {
 		background: 'transparent',

@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import { colors, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { Icon } from 'components/atoms';
+import { grey } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -88,7 +89,7 @@ const CardJobMinimal = ({
 				<div className="card-job-minimal__arrow-container">
 					<Icon
 						fontIconClass="fas fa-angle-right"
-						fontIconColor={colors.grey[700]}
+						fontIconColor={grey[700]}
 						className="card-job-minimal__arrow"
 					/>
 				</div>
